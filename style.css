@@ -422,3 +422,182 @@ margin-left: .3rem;
     color: var(--main-color);
     
 }
+
+/* Responsive styles for mobile screens */
+@media (max-width: 768px) {
+    /* allow scrolling on small devices and reduce global padding */
+    body { overflow: auto; padding: 0.5rem; }
+
+    /* shrink the book wrapper to fit narrow viewports */
+    .wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 420px;
+        height: auto;
+        padding: 1rem;
+        perspective: 900px;
+        margin: 1.2rem auto;
+        animation: none;
+    }
+
+    /* adapt covers and book layout */
+    .cover {
+        position: relative;
+        width: 50%;
+        height: auto;
+        transform: none;
+        box-shadow: none;
+        border-radius: .5rem;
+    }
+
+    .cover.cover-right { z-index: 50; }
+
+    .book {
+        width: 100%;
+        height: auto;
+        display: block;
+        perspective: 900px;
+    }
+
+    /* Make each page full width and stack naturally on mobile */
+    .book .book-page{
+        position: relative;
+        width: 100%;
+        height: auto;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        transform-style: preserve-3d;
+    }
+
+    .book-page.page-left{ box-shadow: none; }
+
+    .book-page.page-right{
+        position: relative;
+        right: auto;
+        transform-origin: left center;
+        transition: transform .7s cubic-bezier(.645,.045,.355,1);
+    }
+
+    /* reduce rotation so it doesn't cover entire viewport on mobile */
+    .book-page.page-right.turn{ transform: rotateY(-160deg); }
+
+    /* Ensure front/back faces don't show through during flips */
+    .book-page .page-front,
+    .book-page .page-back{
+        position: relative;
+        transform: none;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+
+    /* typography and image adjustments */
+    .portfile-page img{ max-width: 100px; }
+    .portfile-page h1{ font-size: 1.6rem; }
+    .portfile-page h3{ font-size: 1.1rem; }
+
+    /* button sizing */
+    .btn{ width: auto; padding: .6rem .8rem; font-size: .95rem; }
+    .btn-box .btn{ margin: 0 .4rem; }
+
+    /* navigation buttons and controls */
+    .nextprev-btn{ bottom: .6rem; right: .6rem; width: 1.8rem; height: 1.8rem; font-size: 1.6rem; }
+    .nextprev-btn.back{ left: .6rem; }
+    .back-profile{ bottom: 1rem; right: 1rem; width: 1.8rem; height: 1.8rem; }
+
+    /* reduce image boxes and textarea heights */
+    .portfolio-box .img-box{ height: 12rem; }
+    .contact-box textarea{ height: 10rem; }
+
+    /* content spacing */
+    .skills-box, .services-box, .portfolio-box, .workeduc-box{ gap: 1rem; }
+}
+/* Responsive styles for mobile screens */
+@media (max-width: 500px) {
+    /* allow scrolling on small devices and reduce global padding */
+    body { overflow: auto; padding: 0.5rem; }
+
+    /* shrink the book wrapper to fit narrow viewports */
+    .wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 420px;
+        height: auto;
+        padding: 1rem;
+        perspective: 900px;
+        margin: 1.2rem auto;
+        animation: none;
+    }
+
+    /* adapt covers and book layout */
+    .cover {
+        position: relative;
+        width: 50%;
+        height: auto;
+        transform: none;
+        box-shadow: none;
+        border-radius: .5rem;
+    }
+
+    .cover.cover-right { z-index: 50; }
+
+    .book {
+        width: 100%;
+        height: auto;
+        display: block;
+        perspective: 900px;
+    }
+
+    /* Make each page full width and stack naturally on mobile */
+    .book .book-page{
+        position: relative;
+        width: 100%;
+        height: auto;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        transform-style: preserve-3d;
+    }
+
+    .book-page.page-left{ box-shadow: none; }
+
+    .book-page.page-right{
+        position: relative;
+        right: auto;
+        transform-origin: left center;
+        transition: transform .7s cubic-bezier(.645,.045,.355,1);
+    }
+
+    /* reduce rotation so it doesn't cover entire viewport on mobile */
+    .book-page.page-right.turn{ transform: rotateY(-160deg); }
+
+    /* Ensure front/back faces don't show through during flips */
+    .book-page .page-front,
+    .book-page .page-back{
+        position: relative;
+        transform: none;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+
+    /* typography and image adjustments */
+    .portfile-page img{ max-width: 100px; }
+    .portfile-page h1{ font-size: 1.6rem; }
+    .portfile-page h3{ font-size: 1.1rem; }
+
+    /* button sizing */
+    .btn{ width: auto; padding: .6rem .8rem; font-size: .95rem; }
+    .btn-box .btn{ margin: 0 .4rem; }
+
+    /* navigation buttons and controls */
+    .nextprev-btn{ bottom: .6rem; right: .6rem; width: 1.8rem; height: 1.8rem; font-size: 1.6rem; }
+    .nextprev-btn.back{ left: .6rem; }
+    .back-profile{ bottom: 1rem; right: 1rem; width: 1.8rem; height: 1.8rem; }
+
+    /* reduce image boxes and textarea heights */
+    .portfolio-box .img-box{ height: 12rem; }
+    .contact-box textarea{ height: 10rem; }
+
+    /* content spacing */
+    .skills-box, .services-box, .portfolio-box, .workeduc-box{ gap: 1rem; }
+}
